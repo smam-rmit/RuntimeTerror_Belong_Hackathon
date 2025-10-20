@@ -166,9 +166,9 @@
             this.state.scenarioId = this.getFirstScenarioId(characterId);
             this.saveState();
 
-            // Start background music at 50% volume
+            // Start background music at 40% volume
             if (this.dom.backgroundMusic) {
-                this.dom.backgroundMusic.volume = 0.3;
+                this.dom.backgroundMusic.volume = 0.4;
                 this.dom.backgroundMusic.play().catch(err => {
                     console.log("Audio autoplay prevented:", err);
                 });
