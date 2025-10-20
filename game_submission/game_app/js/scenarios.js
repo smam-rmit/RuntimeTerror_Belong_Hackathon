@@ -6,7 +6,7 @@
             sequence: 1,
             day: "Day 1 • Lunchtime",
             title: "Finding a seat in the cafeteria",
-            background: "assets/images/backgrounds/maya_cafeteria.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "Maya sits alone at a lunch table. A nearby group laughs about weekend plans, and she wonders if she should walk over.",
             fact: "Did you know? 1 in 3 international students report feeling left out during unstructured school times like lunch.",
             choices: [
@@ -76,7 +76,7 @@
             sequence: 2,
             day: "Day 2 • Humanities",
             title: "Group project scramble",
-            background: "assets/images/backgrounds/maya_group_project.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "The teacher assigns a group project. Students quickly form groups of three. Maya hesitates, unsure who to approach.",
             fact: "Collaborative classrooms improve belonging when teachers help students form inclusive groups.",
             choices: [
@@ -145,7 +145,7 @@
             sequence: 3,
             day: "Day 3 • Assembly",
             title: "Cultural celebration day",
-            background: "assets/images/backgrounds/maya_cultural_day.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "The school is organizing a cultural celebration. The teacher asks Maya if she would present about Vietnam.",
             fact: "Invitations should feel collaborative, not tokenizing. Students should have authentic choice in how they share culture.",
             choices: [
@@ -214,7 +214,8 @@
             sequence: 4,
             day: "Day 4 • Hallway",
             title: "Overhearing harmful comments",
-            background: "assets/images/backgrounds/maya_comment.png",
+            background: "assets/images/backgrounds/outsideschool.png",
+            portrait: "assets/images/characters/crying_maya.png",
             context: "Maya hears a group mocking another student's accent in the hallway. Her heart sinks.",
             fact: "Interrupting bias can shift school culture. Even a short statement can signal allyship.",
             choices: [
@@ -286,7 +287,7 @@
             sequence: 1,
             day: "Day 1 • Robotics Lab",
             title: "Kicking off robotics club",
-            background: "assets/images/backgrounds/alex_lab.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "Alex arrives early to the robotics lab. The club is planning teams for the regional contest, and the room is already buzzing.",
             fact: "Students on the autism spectrum thrive when teammates agree on clear communication norms.",
             choices: [
@@ -348,7 +349,7 @@
             sequence: 2,
             day: "Day 2 • Homeroom",
             title: "Group project planning",
-            background: "assets/images/backgrounds/alex_group_planning.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "In class, Alex is paired with two classmates for a science presentation. The group starts talking over each other.",
             fact: "Facilitating turn-taking and role clarity boosts inclusion for neurodivergent students.",
             choices: [
@@ -416,7 +417,7 @@
             sequence: 3,
             day: "Day 3 • Physical Education",
             title: "Unexpected PE class switch",
-            background: "assets/images/backgrounds/alex_pe.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "The PE teacher announces a surprise change to a loud, fast-paced dodgeball game. Alex feels sensory overload creeping in.",
             fact: "Advance warnings and alternatives help neurodivergent students manage sensory load in PE.",
             choices: [
@@ -484,7 +485,7 @@
             sequence: 4,
             day: "Day 4 • Assembly",
             title: "School assembly showcase",
-            background: "assets/images/backgrounds/alex_assembly.png",
+            background: "assets/images/backgrounds/outsideschool.png",
             context: "The principal invites Alex's team to demo their robot on stage, but the setup is chaotic and bright.",
             fact: "Providing accessible presentation setups encourages neurodivergent students to share their talents.",
             choices: [

@@ -5,11 +5,11 @@
             displayName: "Maya Nguyen",
             tagline: "Vietnamese international student finding her crew",
             description: "Maya loves storytelling and debate club, but language barriers and cultural gaps make it hard to join in.",
-            portrait: "assets/images/characters/maya_portrait.png",
-            cardImage: "assets/images/characters/maya_card.png",
+            portrait: "assets/images/characters/anxious_maya.png",
+            cardImage: "assets/images/characters/anxious_maya.png",
             accentColor: "#ff7a82",
             accentShadow: "#c13c4a",
-            defaultBackground: "assets/images/backgrounds/maya_default.png",
+            defaultBackground: "assets/images/backgrounds/outsideschool.png",
             startingStats: {
                 inclusionScore: 55,
                 confidence: 32
@@ -26,11 +26,11 @@
             displayName: "Alex Carter",
             tagline: "Autistic student balancing passion and sensory overload",
             description: "Alex is a robotics whiz with a sharp mind. Group projects and noisy hallways can overwhelm them.",
-            portrait: "assets/images/characters/alex_portrait.png",
-            cardImage: "assets/images/characters/alex_card.png",
+            portrait: "",
+            cardImage: "",
             accentColor: "#6ac1ff",
             accentShadow: "#1f5faf",
-            defaultBackground: "assets/images/backgrounds/alex_default.png",
+            defaultBackground: "assets/images/backgrounds/outsideschool.png",
             startingStats: {
                 inclusionScore: 58,
                 confidence: 40

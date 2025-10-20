@@ -1,5 +1,5 @@
 (function () {
-    const STORAGE_KEY = "through-their-eyes-save-v1";
+    const STORAGE_KEY = "belong-save-v1";
 
     document.addEventListener("DOMContentLoaded", () => {
         const app = new GameApp();
@@ -30,6 +30,7 @@
                 results: document.getElementById("results-screen"),
                 resources: document.getElementById("resources-screen")
             };
+            this.dom.gameScreen = this.dom.screens.game;
             this.dom.startButton = document.getElementById("start-button");
             this.dom.continueButton = document.getElementById("continue-button");
             this.dom.resourcesButton = document.getElementById("resources-button");
@@ -38,6 +39,7 @@
             this.dom.scoreChip = document.getElementById("score-chip");
             this.dom.progressPill = document.getElementById("progress-pill");
             this.dom.sceneAvatar = document.getElementById("scene-avatar");
+            this.dom.sceneBackground = document.getElementById("scene-background");
             this.dom.sceneTitle = document.getElementById("scene-title");
             this.dom.sceneDay = document.getElementById("scene-day");
             this.dom.sceneContext = document.getElementById("scene-context");
@@ -111,14 +113,38 @@
                 card.className = "character-card";
                 card.type = "button";
                 card.setAttribute("role", "listitem");
-                card.innerHTML = `
-                    <div class="avatar-circle ${character.avatarClass}"></div>
-                    <div class="character-meta">
-                        <h2>${character.displayName}</h2>
-                        <p>${character.tagline}</p>
-                        <p>${character.description}</p>
-                    </div>
-                `;
+                if (character.accentColor) {
+                    card.style.setProperty("--card-accent", character.accentColor);
+                }
+
+                const portraitFrame = document.createElement("div");
+                portraitFrame.className = "character-portrait-frame";
+                const portraitSrc = character.cardImage || character.portrait;
+                if (portraitSrc) {
+                    const img = document.createElement("img");
+                    img.src = portraitSrc;
+                    img.alt = `${character.displayName} portrait`;
+                    img.loading = "lazy";
+                    portraitFrame.appendChild(img);
+                } else {
+                    const placeholder = document.createElement("div");
+                    placeholder.className = "character-placeholder";
+                    placeholder.textContent = character.displayName.charAt(0).toUpperCase();
+                    placeholder.setAttribute("aria-hidden", "true");
+                    portraitFrame.appendChild(placeholder);
+                }
+
+                const meta = document.createElement("div");
+                meta.className = "character-meta";
+                const name = document.createElement("h2");
+                name.textContent = character.displayName;
+                const tagline = document.createElement("p");
+                tagline.textContent = character.tagline;
+                const description = document.createElement("p");
+                description.textContent = character.description;
+                meta.append(name, tagline, description);
+
+                card.append(portraitFrame, meta);
                 card.addEventListener("click", () => this.startNewStory(character.id));
                 this.dom.characterGrid.appendChild(card);
             });
@@ -198,7 +224,24 @@
                 return;
             }
 
-            this.dom.sceneAvatar.className = `avatar-circle ${character.avatarClass}`;
+            this.applyCharacterTheme(character);
+            this.applySceneArtwork(scenario, character);
+
+            const portraitSrc = scenario.portrait || character.portrait || "";
+            if (portraitSrc) {
+                this.dom.sceneAvatar.src = portraitSrc;
+                this.dom.sceneAvatar.classList.remove("hidden");
+            } else {
+                this.dom.sceneAvatar.removeAttribute("src");
+                this.dom.sceneAvatar.classList.add("hidden");
+            }
+            this.dom.sceneAvatar.alt = `${character.displayName} portrait`;
+            if (character.accentColor) {
+                this.dom.sceneAvatar.style.setProperty("--card-accent", character.accentColor);
+            } else {
+                this.dom.sceneAvatar.style.removeProperty("--card-accent");
+            }
+
             this.dom.sceneTitle.textContent = scenario.title;
             this.dom.sceneDay.textContent = scenario.day;
             this.dom.sceneContext.textContent = scenario.context;
@@ -400,11 +443,32 @@
             });
         }
 
+        applyCharacterTheme(character) {
+            const computed = getComputedStyle(this.dom.gameScreen);
+            const accent = (character?.accentColor || computed.getPropertyValue("--accent-color") || "#6fd5ff").trim();
+            const shadow = (character?.accentShadow || computed.getPropertyValue("--accent-shadow") || "#1e4a8a").trim();
+            this.dom.gameScreen.style.setProperty("--accent-color", accent);
+            this.dom.gameScreen.style.setProperty("--accent-shadow", shadow);
+        }
+
+        applySceneArtwork(scenario, character) {
+            const sceneArt = scenario.background || character.cardImage || "";
+            if (!this.dom.sceneBackground) {
+                return;
+            }
+            if (sceneArt) {
+                this.dom.sceneBackground.style.backgroundImage = `url("${sceneArt}")`;
+            } else {
+                this.dom.sceneBackground.style.backgroundImage = "none";
+            }
+        }
+
         saveState() {
             try {
+                this.state.flags = Array.from(this.flagSet);
                 const payload = {
                     ...this.state,
-                    flags: Array.from(this.flagSet)
+                    flags: this.state.flags
                 };
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
             } catch (error) {

@@ -18,7 +18,7 @@
 		</header>
 
 		<section id="menu-screen" class="screen active" aria-labelledby="menu-title" data-screen="menu">
-			<h2 id="menu-title">Welcome back</h2>
+			<h2 id="menu-title">Welcome!!</h2>
 			<p>Experience high school moments through different perspectives and learn how small actions build inclusion.</p>
 			<div class="menu-actions">
 				<button id="start-button" class="btn btn-primary">Start new story</button>
@@ -34,38 +34,45 @@
 			<div id="character-grid" class="character-grid" role="list"></div>
 		</section>
 
-		<section id="game-screen" class="screen" aria-live="polite" data-screen="game">
-			<div class="status-bar">
-				<div class="score-chip" id="score-chip">Score: 0</div>
-				<div class="progress-pill" id="progress-pill">Day 1</div>
-				<button id="save-exit" class="btn btn-tertiary" type="button">Save &amp; exit</button>
-			</div>
+		<section id="game-screen" class="screen split-layout" aria-live="polite" data-screen="game">
+			<div class="game-left-panel">
+				<div class="status-bar">
+					<div class="score-chip" id="score-chip">Score: 0</div>
+					<div class="progress-pill" id="progress-pill">Day 1</div>
+					<button id="save-exit" class="btn btn-tertiary" type="button">Save &amp; exit</button>
+				</div>
 
-			<div class="scene-card">
-				<div class="scene-heading">
-					<img id="scene-avatar" class="character-portrait" src="" alt="Character portrait" loading="lazy">
-					<div>
+				<div class="character-display">
+					<img id="scene-avatar" class="character-portrait-large" src="" alt="Character portrait" loading="lazy">
+					<div class="character-info">
 						<h3 id="scene-title">Scene title</h3>
-						<p id="scene-day" class="lead">Day 1</p>
+						<p id="scene-day" class="scene-day-text">Day 1</p>
 					</div>
 				</div>
-				<p id="scene-context" class="scene-context"></p>
-			</div>
 
-			<div>
-				<h4>What will you do?</h4>
-				<div id="choices-container" class="choice-list" role="group" aria-label="Available choices"></div>
-				<div id="feedback-container" class="feedback-card hidden" aria-live="assertive"></div>
-				<div id="fact-banner" class="fact-banner hidden">
-					<strong>Insight</strong>
-					<p id="fact-text"></p>
-					<button id="fact-toggle" class="btn btn-secondary" type="button">Show insight</button>
+				<div class="scene-description">
+					<p id="scene-context" class="scene-context"></p>
+				</div>
+
+				<div class="choices-section">
+					<h4>What will you do?</h4>
+					<div id="choices-container" class="choice-list" role="group" aria-label="Available choices"></div>
+					<div id="feedback-container" class="feedback-card hidden" aria-live="assertive"></div>
+					<div id="fact-banner" class="fact-banner hidden">
+						<strong>Insight</strong>
+						<p id="fact-text"></p>
+						<button id="fact-toggle" class="btn btn-secondary" type="button">Show insight</button>
+					</div>
+				</div>
+
+				<div class="menu-actions inline-actions">
+					<button id="continue-button-next" class="btn btn-primary hidden" type="button">Continue</button>
+					<button id="restart-button" class="btn btn-tertiary" type="button">Restart story</button>
 				</div>
 			</div>
 
-			<div class="menu-actions inline-actions">
-				<button id="continue-button-next" class="btn btn-primary hidden" type="button">Continue</button>
-				<button id="restart-button" class="btn btn-tertiary" type="button">Restart story</button>
+			<div class="game-right-panel">
+				<div id="scene-background" class="scene-background-image"></div>
 			</div>
 		</section>
 
