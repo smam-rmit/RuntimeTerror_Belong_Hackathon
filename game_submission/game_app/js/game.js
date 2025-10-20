@@ -12,7 +12,24 @@
             this.pendingOutcome = null;
             this.previousScreen = "menu";
             this.dom = {};
+
         }
+
+        // Inside GameApp class
+playMusicOnInteraction() {
+    if (this.dom.gameMusic) {
+        this.dom.gameMusic.loop = true; 
+        
+        // This command starts playback because it's triggered by the user's click
+        this.dom.gameMusic.play()
+            .then(() => {
+                console.log("Background music started successfully.");
+            })
+            .catch(error => {
+                console.warn("Music playback failed:", error);
+            });
+    }
+}
 
         init() {
             this.cacheDom();
@@ -59,7 +76,7 @@
             this.dom.viewResourcesFromResults = document.getElementById("view-resources-from-results");
             this.dom.returnMenu = document.getElementById("return-menu");
             this.dom.resourcesBack = document.getElementById("resources-back");
-            this.dom.backgroundMusic = document.getElementById("background-music");
+            this.dom.gameMusic = document.getElementById("game-music");
         }
 
         bindEvents() {
@@ -75,6 +92,7 @@
             this.dom.viewResourcesFromResults.addEventListener("click", () => this.openResources("results"));
             this.dom.returnMenu.addEventListener("click", () => this.showScreen("menu"));
             this.dom.resourcesBack.addEventListener("click", () => this.showScreen(this.previousScreen));
+            this.dom.startButton.addEventListener("click", () => this.playMusicOnInteraction());
         }
 
         resetState() {
