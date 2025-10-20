@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Belong</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Belong</h1>
+			<p class="lead">Every choice shapes belonging. Step into the school day of Maya or Alex and guide their story.</p>
+		</header>
+
+		<section id="menu-screen" class="screen active" aria-labelledby="menu-title">
+			<h2 id="menu-title">Welcome back</h2>
+			<p>Experience high school moments through different perspectives and learn how small actions build inclusion.</p>
+			<div class="menu-actions">
+				<button id="start-button" class="btn btn-primary">Start new story</button>
+				<button id="continue-button" class="btn btn-secondary hidden">Continue saved story</button>
+				<button id="resources-button" class="btn btn-tertiary">View resources</button>
+			</div>
+		</section>
+
+		<section id="character-screen" class="screen" aria-labelledby="character-title">
+			<button id="character-back" class="btn btn-tertiary" type="button">&larr; Back to menu</button>
+			<h2 id="character-title">Choose who to walk with</h2>
+			<p>Select a story to explore the challenges they face and the allies who make a difference.</p>
+			<div id="character-grid" class="character-grid" role="list"></div>
+		</section>
+
+		<section id="game-screen" class="screen" aria-live="polite">
+			<div class="status-bar">
+				<div class="score-chip" id="score-chip">Score: 0</div>
+				<div class="progress-pill" id="progress-pill">Day 1</div>
+				<button id="save-exit" class="btn btn-tertiary" type="button">Save &amp; exit</button>
+			</div>
+
+			<div class="scene-card">
+				<div class="scene-heading">
+					<div id="scene-avatar" class="avatar-circle"></div>
+					<div>
+						<h3 id="scene-title">Scene title</h3>
+						<p id="scene-day" class="lead">Day 1</p>
+					</div>
+				</div>
+				<p id="scene-context" class="scene-context"></p>
+			</div>
+
+			<div>
+				<h4>What will you do?</h4>
+				<div id="choices-container" class="choice-list" role="group" aria-label="Available choices"></div>
+				<div id="feedback-container" class="feedback-card hidden" aria-live="assertive"></div>
+				<div id="fact-banner" class="fact-banner hidden">
+					<strong>Insight</strong>
+					<p id="fact-text"></p>
+					<button id="fact-toggle" class="btn btn-secondary" type="button">Show insight</button>
+				</div>
+			</div>
+
+			<div class="menu-actions" style="margin-top:32px;max-width:320px;">
+				<button id="continue-button-next" class="btn btn-primary hidden" type="button">Continue</button>
+				<button id="restart-button" class="btn btn-tertiary" type="button">Restart story</button>
+			</div>
+		</section>
+
+		<section id="results-screen" class="screen" aria-labelledby="results-title">
+			<h2 id="results-title">Reflection</h2>
+			<p>Your choices shaped how the week unfolded. Here's how your character felt.</p>
+			<div class="results-summary">
+				<div class="summary-card">
+					<h3>Inclusion score</h3>
+					<p id="results-score" class="lead"></p>
+					<p id="results-tier"></p>
+				</div>
+				<div class="summary-card">
+					<h3>Character reflection</h3>
+					<p id="results-reflection"></p>
+				</div>
+				<div class="summary-card">
+					<h3>Moments that mattered</h3>
+					<ul id="results-moments" class="resources-list"></ul>
+				</div>
+			</div>
+			<div class="menu-actions" style="margin-top:32px;max-width:380px;">
+				<button id="play-again" class="btn btn-primary" type="button">Play another story</button>
+				<button id="view-resources-from-results" class="btn btn-secondary" type="button">Explore resources</button>
+				<button id="return-menu" class="btn btn-tertiary" type="button">Back to menu</button>
+			</div>
+		</section>
+
+		<section id="resources-screen" class="screen" aria-labelledby="resources-title">
+			<button id="resources-back" class="btn btn-tertiary" type="button">&larr; Back</button>
+			<h2 id="resources-title">Support &amp; learning</h2>
+			<p>Belonging is a community effort. These organisations help students and educators build inclusive schools.</p>
+			<ul class="resources-list">
+				<li><strong>Headspace</strong> – Youth mental health support across Australia</li>
+				<li><strong>Beyond Blue</strong> – Mental health resources and helpline</li>
+				<li><strong>Safe Schools Coalition</strong> – LGBTQ+ inclusion programs</li>
+				<li><strong>Multicultural Youth Advocacy Network</strong> – Support for migrant and refugee young people</li>
+				<li><strong>Foundation for Young Australians</strong> – Research on youth wellbeing and education</li>
+			</ul>
+		</section>
+	</main>
+
+	<script src="js/characters.js"></script>
+	<script src="js/scenarios.js"></script>
+	<script src="js/scoring.js"></script>
+	<script src="js/game.js"></script>
+</body>
+</html>
