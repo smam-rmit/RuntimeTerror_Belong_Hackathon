@@ -214,7 +214,7 @@
             sequence: 4,
             day: "Day 4 • Hallway",
             title: "Overhearing harmful comments",
-            background: "assets/images/backgrounds/outsideschool.png",
+            background: "assets/images/backgrounds/hallway.png",
             portrait: "assets/images/characters/crying_maya.png",
             context: "Maya hears a group mocking another student's accent in the hallway. Her heart sinks.",
             fact: "Interrupting bias can shift school culture. Even a short statement can signal allyship.",
