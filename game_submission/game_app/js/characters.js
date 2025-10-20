@@ -3,10 +3,13 @@
         maya: {
             id: "maya",
             displayName: "Maya Nguyen",
-            tagline: "Finding belonging as a Vietnamese international student",
+            tagline: "Vietnamese international student finding her crew",
             description: "Maya loves storytelling and debate club, but language barriers and cultural gaps make it hard to join in.",
-            avatarClass: "avatar-maya",
-            themeColor: "#ff6978",
+            portrait: "assets/images/characters/maya_portrait.png",
+            cardImage: "assets/images/characters/maya_card.png",
+            accentColor: "#ff7a82",
+            accentShadow: "#c13c4a",
+            defaultBackground: "assets/images/backgrounds/maya_default.png",
             startingStats: {
                 inclusionScore: 55,
                 confidence: 32
@@ -21,10 +24,13 @@
         alex: {
             id: "alex",
             displayName: "Alex Carter",
-            tagline: "Navigating high school as a student on the autism spectrum",
+            tagline: "Autistic student balancing passion and sensory overload",
             description: "Alex is a robotics whiz with a sharp mind. Group projects and noisy hallways can overwhelm them.",
-            avatarClass: "avatar-alex",
-            themeColor: "#3655f2",
+            portrait: "assets/images/characters/alex_portrait.png",
+            cardImage: "assets/images/characters/alex_card.png",
+            accentColor: "#6ac1ff",
+            accentShadow: "#1f5faf",
+            defaultBackground: "assets/images/backgrounds/alex_default.png",
             startingStats: {
                 inclusionScore: 58,
                 confidence: 40
