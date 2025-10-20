@@ -59,6 +59,7 @@
             this.dom.viewResourcesFromResults = document.getElementById("view-resources-from-results");
             this.dom.returnMenu = document.getElementById("return-menu");
             this.dom.resourcesBack = document.getElementById("resources-back");
+            this.dom.backgroundMusic = document.getElementById("background-music");
         }
 
         bindEvents() {
@@ -164,6 +165,14 @@
             this.state.savedAt = new Date().toISOString();
             this.state.scenarioId = this.getFirstScenarioId(characterId);
             this.saveState();
+
+            // Start background music at 50% volume
+            if (this.dom.backgroundMusic) {
+                this.dom.backgroundMusic.volume = 0.3;
+                this.dom.backgroundMusic.play().catch(err => {
+                    console.log("Audio autoplay prevented:", err);
+                });
+            }
 
             this.renderScenario();
             this.showScreen("game");
