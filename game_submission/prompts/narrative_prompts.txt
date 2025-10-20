@@ -1,0 +1,7 @@
+NARRATIVE DESIGN PROMPTS
+
+1. "Craft a branching narrative for an interactive high school inclusion game where players guide either Maya Nguyen, a Vietnamese international student, or Alex Carter, an autistic robotics prodigy, through four emotionally resonant school-day scenarios. Embed authentic microaggressions, restorative dialogue options, and triumphal reflections that reinforce empathy without veering into melodrama."
+
+2. "Develop a weeklong story arc that juxtaposes cafeteria encounters, group projects, and extracurricular celebrations. Each scene must surface nuanced cultural and neurodiversity challenges, offer three tactically distinct choices, and deliver concise educational insights in the character's voice while preserving the pixel-art retro charm."
+
+3. "Write outcome scripts that dynamically adjust inclusion and confidence scores, culminating in bespoke epilogues celebrating allyship. Ensure the tone balances vulnerability, agency, and hope, providing credible school-based language educators can adopt in classroom discussions."}

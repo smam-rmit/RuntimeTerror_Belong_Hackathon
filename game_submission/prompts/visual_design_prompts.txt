@@ -1,0 +1,7 @@
+VISUAL DESIGN PROMPTS
+
+1. "Generate a suite of pixel-perfect character portraits for Maya Nguyen that capture curiosity, determination, and quiet resilience. Use a luminous palette inspired by twilight cityscapes, integrate subtle cultural motifs in the wardrobe, and ensure each emotional state reads clearly at 200x200 pixels."
+
+2. "Produce robotics-lab and classroom background scenes bathed in soft, diffused lighting that accentuates nostalgia while keeping UI overlays legible. Favor isometric-inspired geometry, warm wood textures, and selective highlights that guide player focus without overpowering the split-screen layout."
+
+3. "Design a hero logo titled 'Belong' in retro arcade typography, accompanied by a gentle halo effect and inclusive iconography. The composition should feel aspirational yet grounded, supporting both dark-mode interfaces and print collateral for educator toolkits."}
